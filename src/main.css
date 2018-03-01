@@ -1,0 +1,52 @@
+.form-control::-webkit-input-placeholder {
+    color: #BCC5CD;
+    opacity: 1;
+}
+
+.form-control::-moz-placeholder {
+    color: #BCC5CD;
+    opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.form-control::placeholder {
+    color: #c6cfd7;
+    opacity: 1;
+}
+
+.search-input {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.search-input:focus {
+    color: #fff;
+    background-color: #808991;
+    border-color: #4e555b;
+}
+
+.view-main {
+    border: 0.25rem solid #343a40;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+}
+
+.name-para {
+    font-size: 1.5rem;
+}
+
+.location-para {
+    font-size: 1.25rem;
+}
+
+.footer-link {
+    font-size: 1rem;
+}
