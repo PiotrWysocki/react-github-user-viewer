@@ -3,6 +3,9 @@ import './main.css';
 import NotFound from './not-found.jpg';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import Search from './Search';
+import Result from './Result';
+import Footer from './Footer';
 
 const API = 'https://api.github.com/users/';
 
@@ -94,39 +97,10 @@ class App extends Component {
     render(){
         return(
             <div className="container">
-                <div className="mx-auto bg-dark col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5">
-                    <h3 className="text-center mt-2 text-white">React GitHub User Viewer</h3>
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="row">
-                            <input type="text" className="form-control m-2 search-input" placeholder="Search by Username..."
-                                   value={this.state.search} onChange={this.handleChange}/>
-                        </div>
-                    </form>
-                </div>
-                <div className="mx-auto col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5 view-main">
-                    <a href={this.state.htmlUrl.length > 0 ? this.state.htmlUrl : null} target="_blank">
-                        <img className="img-thumbnail rounded mx-auto d-block my-2 avatar" src={this.state.avatar}/>
-                    </a>
-                    <p className="text-center font-weight-bold mb-2 name-para">{this.state.name}</p>
-                    <p className="text-center mb-2 location-para">{this.state.location}</p>
-                </div>
-                <div className="mx-auto bg-dark col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5">
-                    <div className="row">
-                        <a href={this.state.repos > 0 ? this.state.reposUrl : null} target="_blank" className="text-center col my-2 text-light footer-link">
-                            <p className="mb-0">Repositories</p>
-                            <p className="mb-0">{this.state.repos}</p>
-                        </a>
-                        <a href={this.state.followers > 0 ? this.state.followersUrl : null} target="_blank" className="text-center col my-2 text-light footer-link">
-                            <p className="mb-0">Followers</p>
-                            <p className="mb-0">{this.state.followers}</p>
-                        </a>
-                        <a href={this.state.following > 0 ? this.state.followingUrl : null} target="_blank" className="text-center col my-2 text-light footer-link">
-                            <p className="mb-0">Following</p>
-                            <p className="mb-0">{this.state.following}</p>
-                        </a>
-                    </div>
-
-                </div>
+                <Search search={this.state.search} handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+                <Result htmlUrl={this.state.htmlUrl} avatar={this.state.avatar} name={this.state.name} location={this.state.location}/>
+                <Footer repos={this.state.repos} reposUrl={this.state.reposUrl} followers={this.state.followers}
+                        followersUrl={this.state.followersUrl} following={this.state.following} followingUrl={this.state.followingUrl}/>
             </div>);
     }
 }
