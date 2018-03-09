@@ -1,10 +1,17 @@
 {
   "name": "react-github-user-viewer",
+  "jest": {
+    "verbose": true,
+    "setupTestFrameworkScriptFile": "./src/setupTests.js",
+    "moduleNameMapper": {
+      "\\.(css|jpg)$": "identity-obj-proxy"
+    }
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack --progress --display-error-details",
     "start": "webpack-dev-server --progress --content-base dist"
   },
@@ -13,11 +20,17 @@
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.10",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "file-loader": "^1.1.10",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.4.2",
+    "react-test-renderer": "^16.2.0",
     "style-loader": "^0.20.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
@@ -25,6 +38,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
+    "node-fetch": "^2.1.1",
     "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
