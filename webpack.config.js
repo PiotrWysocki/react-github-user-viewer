@@ -1,9 +1,7 @@
 const path = require('path');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const PATHS = {
     src: path.resolve(__dirname,'src'),
-    dist: path.resolve(__dirname,'dist'),
     docs: path.resolve(__dirname, 'docs')
 };
 
@@ -13,7 +11,7 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: PATHS.dist
+        path: PATHS.docs
     },
     module: {
         rules: [
@@ -31,14 +29,5 @@ module.exports = {
                 use: [ 'file-loader' ]
             }
         ]
-    },
-    plugins: [
-        new FileManagerPlugin({
-            onEnd: {
-                copy: [
-                    {source: PATHS.dist, destination: PATHS.docs}
-                ]
-            }
-        })
-        ]
+    }
 };
